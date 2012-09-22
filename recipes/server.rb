@@ -7,6 +7,8 @@ require_recipe "postgresql"
 
 pg_version = node["postgresql"]["version"]
 
+ENV['LC_ALL'] = node["postgresql"]["locale"]
+
 # install the package
 package "postgresql-#{pg_version}"
 
